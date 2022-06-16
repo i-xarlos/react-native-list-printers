@@ -1,0 +1,14 @@
+{
+  "printers": [
+    {"name": "HP Laptop", "src": ""},
+    {"name": "HP Injet Printers", "src": ""},
+    {"name": "HP Laser Printer", "src": ""},
+    {"name": "HP Scanner", "src": ""},
+    {"name": "HP Desktop", "src": ""}
+  ],
+  "drives": [
+    {"name": "c", "src": ""},
+    {"name": "d", "src": ""},
+    {"name": "h", "src": ""}
+  ]
+}

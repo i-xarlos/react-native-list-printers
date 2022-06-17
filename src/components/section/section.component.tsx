@@ -15,15 +15,7 @@ const Section: React.FC<{title: string}> = ({children, title}) => {
         ]}>
         {title}
       </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      {children}
     </View>
   );
 };
@@ -36,6 +28,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
+    marginBottom: 20,
   },
   sectionDescription: {
     marginTop: 8,

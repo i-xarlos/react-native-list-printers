@@ -11,7 +11,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 type ItemProps = {
   name: string;
-  src?: string;
+  src?: ImageSourcePropType;
   onPress?: (name: string) => void;
 };
 

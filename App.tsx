@@ -13,7 +13,6 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
   useColorScheme,
   View,
 } from 'react-native';
@@ -46,17 +45,17 @@ const App = () => {
           <Section title="List Printers" mode="row">
             {printers.map((item: Printer) => (
               <Item
-                key={item.name}
+                key={item.id}
                 src={item.src}
                 name={item.name}
                 onPress={handlePressItem}
               />
             ))}
           </Section>
-          <Section title="List Printers" mode="row">
+          <Section title="List Drives" mode="row">
             {drives.map((item: Drive) => (
               <Item
-                key={item.name}
+                key={item.id}
                 src={item.src}
                 name={item.name}
                 onPress={handlePressItem}
@@ -69,11 +68,5 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  rowView: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-});
-
 export default App;
+

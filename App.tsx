@@ -20,10 +20,13 @@ import {
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Item from './src/components/item/item.component';
 import Section from './src/components/section/section.component';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import StackNav from './src/components/navigation/stack-nav.component';
 import {printers, drives, Printer, Drive} from './src/data/fake_data';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  const navigation = useNavigation();
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -35,6 +38,10 @@ const App = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <NavigationContainer>
+        <StackNav />
+      </NavigationContainer>
+
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>

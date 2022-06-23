@@ -9,8 +9,7 @@
       "cwd": "${workspaceFolder}",
       "type": "reactnative",
       "request": "launch",
-      "platform": "windows",
-      "isDynamic": true
+      "platform": "windows"
     }
   ]
 }

@@ -10,7 +10,7 @@ Guide [https://microsoft.github.io/react-native-windows/]
 
 ## 2. Set your Visual Studio Code (user/settings.json) | Optional
 
-- autoformat with prettier and fix slint rules
+- To develop faster you should have Prettier and Eslint installed in "Visual Studio Code" and also have autoformat preconfigured for both in settings.jsonautoformat with prettier and fix slint rules
 
   `{"editor.defaultFormatter": "esbenp.prettier-vscode", "editor.codeActionsOnSave": { "source.fixAll": true }}`
 

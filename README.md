@@ -8,7 +8,7 @@ Guide [https://microsoft.github.io/react-native-windows/]
 
   `Set-ExecutionPolicy Unrestricted -Scope Process -Force; iex (New-Object System.Net.WebClient).DownloadString('https://aka.ms/rnw-deps.ps1')`
 
-## 2. Set your Visiual Studio Code (user/settings.json) | Optional
+## 2. Set your Visual Studio Code (user/settings.json) | Optional
 
 - autoformat with prettier and fix slint rules
 

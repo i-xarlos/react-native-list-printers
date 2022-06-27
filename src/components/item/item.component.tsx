@@ -10,14 +10,14 @@ import {ImageSourcePropType} from 'react-native-windows';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 type ItemProps = {
-  name: string;
+  name?: string;
   src?: ImageSourcePropType;
   onPress?: (name: string) => void;
 };
 
-const Item: React.FC<ItemProps> = ({name, src, onPress = () => {}}) => {
+const Item: React.FC<ItemProps> = ({name = '', src, onPress = () => {}}) => {
   const isDarkMode = useColorScheme() === 'dark';
-
+  console.log('src', src);
   return (
     <TouchableHighlight
       style={styles({isDarkMode}).button}
@@ -49,6 +49,7 @@ const styles = (props?: any) => {
     },
     image: {
       height: 100,
+      width: 100,
       resizeMode: 'contain',
       marginVertical: 10,
     },

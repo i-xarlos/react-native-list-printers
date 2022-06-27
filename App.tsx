@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNav from './src/navigation/stack-nav.component';
 
@@ -11,4 +11,3 @@ const App = () => {
 };
 
 export default App;
-

@@ -17,7 +17,7 @@ Add autoformat for prettier
 
     `"editor.defaultFormatter": "esbenp.prettier-vscode"`
 
-Add autoformat for slint
+Add autofix for slint
 
     `"editor.codeActionsOnSave": { "source.fixAll": true }`
 

@@ -15,7 +15,7 @@ have autoformat preconfigured for both in settings.jsonautoformat with prettier 
 
 Add autoformat for prettier
 
-    `"editor.defaultFormatter": "esbenp.prettier-vscode",`
+    `"editor.defaultFormatter": "esbenp.prettier-vscode"`
 
 Add autoformat for slint
 

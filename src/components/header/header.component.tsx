@@ -17,7 +17,7 @@ const Header: FC<{navigation?: any; title: string; isHome?: boolean}> = ({
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     flex: 1,
     flexDirection: 'row',
     height: 50,

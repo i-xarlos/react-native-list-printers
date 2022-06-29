@@ -10,9 +10,9 @@ const Nav: FC<{navigation: any}> = ({navigation}) => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Button title="Home" onPress={() => navigation.push('Home')} />
-      <Button title="Printers" onPress={() => navigation.push('Printers')} />
-      <Button title="Drives" onPress={() => navigation.push('Drives')} />
+      <Button title="Test Printers" onPress={() => navigation.push('Printers')} />
+      <Button title="Test Other Route" onPress={() => navigation.push('Home')} />
+      {/* <Button title="Drives" onPress={() => navigation.push('Drives')} /> */}
     </View>
   );
 };

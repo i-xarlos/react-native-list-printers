@@ -21,7 +21,9 @@ const Item: React.FC<ItemProps> = ({name, src, onPress = () => {}}) => {
   return (
     <TouchableHighlight
       style={styles({isDarkMode}).button}
-      onPress={() => onPress(name)}>
+      onPress={() => onPress(name)}
+      underlayColor="white"
+    >
       <>
         {src && src !== '' && (
           <Image style={styles({}).image} source={src as ImageSourcePropType} />
@@ -39,9 +41,10 @@ const styles = (props?: any) => {
       justifyContent: 'center',
       alignItems: 'center',
       marginVertical: 5,
-      backgroundColor: props.isDarkMode ? Colors.darker : Colors.lighter,
-      borderWidth: 1,
-      borderColor: props.isDarkMode ? Colors.lighter : Colors.darker,
+      // backgroundColor: props.isDarkMode ? Colors.darker : Colors.lighter,
+      backgroundColor: Colors.lighter,
+      // borderWidth: 1,
+      // borderColor: props.isDarkMode ? Colors.lighter : Colors.darker,
     },
     buttonText: {
       color: props.isDarkMode ? Colors.white : Colors.black,

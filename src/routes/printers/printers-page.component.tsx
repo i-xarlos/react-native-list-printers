@@ -8,16 +8,17 @@ import Header from '../../components/header/header.component';
 
 const PrintersPage: FC<{navigation: any}> = ({navigation}) => {
   const handlePressItem = (name: string) => {
-    console.log(name);
+    console.log(`Device Clicked -> Device Name: ${name}`);
   };
   return (
     <ScrollView>
-      <Header navigation={navigation} title="Printers" />
-      <View style={{backgroundColor: 'black'}}>
+      {/* <Header navigation={navigation} title="Printers" /> */}
+
+      <View style={{backgroundColor: 'white'}}>
         <Nav navigation={navigation} />
       </View>
 
-      <Section title="Printers" mode="row">
+      <Section title="Printers" mode="default">
         {printers.map((item: Printer) => (
           <Item
             key={item.id}

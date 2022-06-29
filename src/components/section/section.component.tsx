@@ -16,7 +16,8 @@ const Section: React.FC<SectionProps> = ({children, mode, title}) => {
         style={[
           styles({}).sectionTitle,
           {
-            color: isDarkMode ? Colors.white : Colors.black,
+            // color: isDarkMode ? Colors.white : Colors.black,
+            color: Colors.white,
           },
         ]}>
         {title}

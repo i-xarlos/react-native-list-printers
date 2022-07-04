@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {View, ScrollView} from 'react-native';
-import {printers, Printer} from '../../data/fake_data';
+import {printers, Printer} from '../../data/mock_data';
 import Item from '../../components/item/item.component';
 import Section from '../../components/section/section.component';
 import Nav from '../../components/nav/nav.component';

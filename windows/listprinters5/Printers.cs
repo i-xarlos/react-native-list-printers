@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.ReactNative.Managed;
 using Windows.Devices.Enumeration;
@@ -9,16 +11,8 @@ namespace listprinters5
 {
     public class DataPrinters
     {
-        public static string[] ImagesList()
-        {
-            string path = "Assets";
-            
-            string[] filePaths = Directory.GetFiles(path, "*.png");
-            return filePaths;
-        }
         public string directory { get; set; }
-        public string[] content { get; set; }
-       
+        public string[] content { get; set; }  
     }
 
    
@@ -29,25 +23,15 @@ namespace listprinters5
 
 
         [ReactMethod("getList")]
-        public async void ListAsync(IReactPromise<string[]> promise)
+        public async void ListAsync(IReactPromise<List<ModulePrinters.Printer>> promise)
         {
             try
             {
-                string printerInterfaceClass = "{0ecef634-6ef0-472a-8085-5ad023ecbccd}";
-                string selector = "System.Devices.InterfaceClassGuid:=\"" + printerInterfaceClass + "\"";
-                string containerIdField = "System.Devices.ContainerId";
-                string[] propertiesToRetrieve = new string[] { containerIdField };
-                DeviceInformationCollection deviceInfoCollection = await DeviceInformation.FindAllAsync(selector, propertiesToRetrieve);
+               
+                var printers = new ModulePrinters.Printers();
+                var printerList = await printers.ListPrinters();
+                promise.Resolve((List<ModulePrinters.Printer>)printerList);
 
-                string[] printersList = new string[deviceInfoCollection.Count];
-
-                for (int i = 0; i < deviceInfoCollection.Count; i++)
-                {
-                    DeviceInformation deviceInfo = deviceInfoCollection[i];
-                    printersList[i] = (string)deviceInfo.Name;
-                }
-
-                promise.Resolve(printersList);
             }
             catch (Exception e)
             {
@@ -66,9 +50,9 @@ namespace listprinters5
         [ReactMethod("getImages")]
         public DataPrinters GetImages()
         {
-
-             var imagesURL = DataPrinters.ImagesList();
-             DataPrinters dataPrinters  =  new DataPrinters() {  directory = Directory.GetCurrentDirectory(), content = imagesURL };
+             var images = new ModuleImages.Images();
+             var imagesList = images.getImagesList();
+             DataPrinters dataPrinters  =  new DataPrinters() {  directory = Directory.GetCurrentDirectory(), content = imagesList };
              return dataPrinters;
 
         }

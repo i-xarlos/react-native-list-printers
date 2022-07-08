@@ -6,17 +6,22 @@ import Section from '../../components/section/section.component';
 import Nav from '../../components/nav/nav.component';
 import Header from '../../components/header/header.component';
 
-type TImage = {
+type Image = {
   content: [];
   directory: string;
 };
 
 const PrintersPage: FC<{navigation: any}> = ({navigation}) => {
-  const [printersList, setPrintersList] = useState<string[]>([]);
-  const [images, setImages] = useState<TImage>({content: [], directory: ''});
+  const [printersList, setPrintersList] = useState<Printer[]>([
+    {name: '', id: ''},
+  ]);
+  const [images, setImages] = useState<Image>({content: [], directory: ''});
 
   useEffect(() => {
-    NativeModules.Printers.getList().then(setPrintersList);
+    console.log('NativeModules', NativeModules);
+    NativeModules.Printers.getList().then((res: Printer[]) =>
+      setPrintersList(res),
+    );
     NativeModules.Printers.getImages((res: any) => setImages(res));
   }, []);
 
@@ -43,12 +48,12 @@ const PrintersPage: FC<{navigation: any}> = ({navigation}) => {
             src={{
               uri: `${images.directory}\\${images.content.find(
                 (name: string) => {
-                  const words = item.split(' ');
+                  const words = item.name.split(' ');
                   return name.includes(words[words.length - 1].toLowerCase());
                 },
               )}`,
             }}
-            name={item}
+            name={item.name}
             onPress={handlePressItem}
           />
         ))}

@@ -159,6 +159,16 @@
       <Version>6.2.9</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModuleImages\ModuleImages.csproj">
+      <Project>{871a2977-f157-438b-86ab-97d5f6fc441a}</Project>
+      <Name>ModuleImages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModulePrinters\ModulePrinters.csproj">
+      <Project>{1941f03f-b822-45c4-8a55-a942f5ee84c7}</Project>
+      <Name>ModulePrinters</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ImportGroup Label="ReactNativeWindowsTargets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpApp.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Uwp.CSharpApp.targets')" />
   </ImportGroup>

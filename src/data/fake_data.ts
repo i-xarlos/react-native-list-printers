@@ -17,7 +17,7 @@ export type Printer = {
 export type Drive = {
   name: string;
   src?: ImageSourcePropType;
-  id: string;
+  id?: string;
 };
 
 export const printers: Printer[] = [
